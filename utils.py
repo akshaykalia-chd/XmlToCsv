@@ -16,13 +16,10 @@ def write_csv(data: list = None, filename: str = None, fieldnames: list = None):
 def fix_key(data: dict = None, key: str = None):
     if data and key:
         try:
-            # print(data)
             output = list()
             items = data.get(key)
-            # print(items)
             for item in items:
                 output.append(item.get_text())
-            # print(output)
             return output
         except Exception as e:
             print(e)
