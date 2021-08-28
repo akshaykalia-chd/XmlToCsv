@@ -1,9 +1,10 @@
 from bs4 import BeautifulSoup
 
+
 class xmlToCsv():
-    def __init__(self, inputfile: str = None, root_tag: str = None):
-        if inputfile and root_tag:
-            file = open(inputfile, "r")
+    def __init__(self, input_file: str = './input.xml', root_tag: str = 'ProtectedVm') -> None:
+        if input_file and root_tag:
+            file = open(input_file, "r")
             contents = file.read()
             file.close()
             self.soup = BeautifulSoup(contents, 'xml')
@@ -29,7 +30,7 @@ class xmlToCsv():
         else:
             print("Error cannot init without input file or root_tag")
 
-    def read_vm_data(self):
+    def read_vm_data(self) -> None:
         output = list()
         for data in self.all_root_tag:
             CustomizationSpec = data.findAll('CustomizationSpec')
@@ -79,20 +80,3 @@ class xmlToCsv():
                         temp['Gateway(s)'] = None
                     output.append(temp)
         self.vm_data = output
-        return output
-
-    def fix_key(self, data: dict = None, key: str = None):
-        if data and key:
-            try:
-                # print(data)
-                output = list()
-                items = data.get(key)
-                # print(items)
-                for item in items:
-                    output.append(item.get_text())
-                # print(output)
-                return output
-            except Exception as e:
-                print(e)
-        else:
-            print("Data and key are need to operate")
