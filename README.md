@@ -1,4 +1,4 @@
-The Projects help prepare a csv file that can act as input for drIpCustomizer
+The Project help prepare a csv file that can act as input for drIpCustomizer
 
 **The script expects two inputs:**
 
