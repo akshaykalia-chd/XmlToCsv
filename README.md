@@ -3,7 +3,7 @@ The Project help prepare a csv file that can act as input for drIpCustomizer
 **The script expects two inputs:**
 
 1) Absolute path for  an input file
-   1) This is  XML file is  generated using drIpReporter
+   1) This is  a XML file generated using drIpReporter
 2) Absolute path for an output file 
 
 **How to use:** 
